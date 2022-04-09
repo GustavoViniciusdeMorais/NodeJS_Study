@@ -1,3 +1,8 @@
+import { 
+    addNewProduct, getProducts
+}
+from '../controllers/ProductsController';
+
 const routes = (app) => {
     app.route('/products')
         .get((req, res, next) => {
@@ -5,14 +10,9 @@ const routes = (app) => {
             console.log(`Request url: ${req.originalUrl}`)
             console.log(`Request method: ${req.method}`)
             next();
-        },
-            (req, res) => {
-                res.send('Get request success')
-            }
-        )
+        }, getProducts)
         
-        .post((req, res) =>
-            res.send('Post success'))
+        .post(addNewProduct)
     
     app.route('/products/:productID')
         .get((req, res) => 
