@@ -6,6 +6,7 @@ npm install express
 npm i mongodb mongoose
 npm i --save-dev babel-cli babel-preset-env babel-preset-stage-0
 npm i body-parser nodemon
+npm start
 ```
 After thoes commands you should change your package.json file
 changing the scripts test to scripts start and put the following content.
