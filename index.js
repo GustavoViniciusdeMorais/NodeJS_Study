@@ -24,6 +24,9 @@ app.use(bodyParser.json());
 
 routes(app);
 
+// serving static files
+app.use(express.static('public/imgs'));
+
 app.get('/', (req, res) => 
     res.send(`Node is running on port ${PORT}`)
 );

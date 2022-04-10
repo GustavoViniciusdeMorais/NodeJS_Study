@@ -1,12 +1,15 @@
 # Gustavo Morais
 
 ```
+sudo docker-compose up -d --build // start containers
+sudo docker exec -it [CONTAINER NAME] sh // access the node container
 npm init
 npm install express
 npm i mongodb mongoose
 npm i --save-dev babel-cli babel-preset-env babel-preset-stage-0
 npm i body-parser nodemon
 npm start
+sudo docker-compose down // stops all containers
 ```
 After thoes commands you should change your package.json file
 changing the scripts test to scripts start and put the following content.

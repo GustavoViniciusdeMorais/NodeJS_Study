@@ -1,5 +1,9 @@
 import { 
-    addNewProduct, getProducts
+    addNewProduct, 
+    getProducts, 
+    getProductById,
+    updateProductById,
+    deleteProductById
 }
 from '../controllers/ProductsController';
 
@@ -15,14 +19,11 @@ const routes = (app) => {
         .post(addNewProduct)
     
     app.route('/products/:productID')
-        .get((req, res) => 
-            res.send('Get ID request success'))
+        .get(getProductById)
         
-        .put((req, res) => 
-            res.send('PUT ID request success'))
+        .put(updateProductById)
         
-        .delete((req, res) => 
-            res.send('DELETE ID request success'))
+        .delete(deleteProductById)
 }
 
 export default routes;
