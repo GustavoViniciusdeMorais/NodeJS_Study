@@ -1,17 +1,16 @@
-FROM node:10-alpine
+# FROM ubuntu:jammy
+FROM gustavovinicius/nodejs:latest
 
-# RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
+RUN apt update
 
-WORKDIR /home/node/app
+RUN apt install nano
 
-# COPY package*.json ./
+RUN apt install curl -y
 
-USER node
+RUN apt install systemctl -y
 
-RUN npm install
+RUN apt install git -y
 
-# COPY --chown=node:node . .
-
-EXPOSE 8080
+WORKDIR /var/www/html
 
 ENTRYPOINT ["tail", "-f", "/dev/null"]

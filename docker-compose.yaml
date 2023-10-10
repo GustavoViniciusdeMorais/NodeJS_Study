@@ -5,19 +5,22 @@ services:
         build:
             context: .
             dockerfile: nodejs.dockerfile
+        container_name: gusnode
         ports:
             - 80:8080
         volumes:
-            - ./:/home/node/app
+            - ./:/var/www/html
         depends_on:
             - mongo
         networks:
-            - app-network
+            gus-node-network:
+                ipv4_address: 12.0.0.10
 
     mongo-express:
         image: mongo-express
         ports:
             - 8081:8081
+        container_name: gusexpress
         environment:
             ME_CONFIG_BASICAUTH_USERNAME: gustavo
             ME_CONFIG_BASICAUTH_PASSWORD: gustavo
@@ -27,10 +30,12 @@ services:
         links:
             - mongo
         networks:
-            - app-network
+            gus-node-network:
+                ipv4_address: 12.0.0.11
     
     mongo:
         image: mongo
+        container_name: gusmongo
         environment:
             MONGO_INITDB_ROOT_USERNAME: root
             MONGO_INITDB_ROOT_PASSWORD: gustavo
@@ -39,8 +44,13 @@ services:
         volumes:
             - .docker/dbdata:/data/db
         networks:
-            - app-network
+            gus-node-network:
+                ipv4_address: 12.0.0.12
 
 networks:
-    app-network:
+    gus-node-network:
         driver: bridge
+        ipam:
+            driver: default
+            config:
+                - subnet: "12.0.0.0/16"
