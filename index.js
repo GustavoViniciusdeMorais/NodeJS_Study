@@ -14,7 +14,15 @@ const root = { product: () =>  {
         "name": "test",
         "description": "test",
         "price": 2.5,
-        "soldout": false
+        "soldout": false,
+        "stores": [
+            {
+                "name": "LA"
+            },
+            {
+                "name": "Passadena"
+            }
+        ]
     }
 }}
 
