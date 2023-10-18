@@ -9,25 +9,6 @@ app.get('/', (req, res) => {
     res.send('GraphQL Study');
 });
 
-// const root = { product: () =>  {
-//         return {
-//             "id": 1,
-//             "name": "test",
-//             "description": "test",
-//             "price": 2.5,
-//             "soldout": false,
-//             "stores": [
-//                 {
-//                     "name": "LA"
-//                 },
-//                 {
-//                     "name": "Passadena"
-//                 }
-//             ]
-//         }
-//     }
-// }
-
 const root = resolvers;
 
 app.use('/graphql', graphqlHTTP({
