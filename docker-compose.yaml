@@ -16,22 +16,22 @@ services:
             gus-node-network:
                 ipv4_address: 12.0.0.10
 
-    mongo-express:
-        image: mongo-express
-        ports:
-            - 8081:8081
-        container_name: gusexpress
-        environment:
-            ME_CONFIG_BASICAUTH_USERNAME: gustavo
-            ME_CONFIG_BASICAUTH_PASSWORD: gustavo
-            ME_CONFIG_MONGODB_PORT: 27017
-            ME_CONFIG_MONGODB_ADMINUSERNAME: root
-            ME_CONFIG_MONGODB_ADMINPASSWORD: gustavo
-        links:
-            - mongo
-        networks:
-            gus-node-network:
-                ipv4_address: 12.0.0.11
+    # mongo-express:
+    #     image: mongo-express
+    #     ports:
+    #         - 8081:8081
+    #     container_name: gusexpress
+    #     environment:
+    #         ME_CONFIG_BASICAUTH_USERNAME: gustavo
+    #         ME_CONFIG_BASICAUTH_PASSWORD: gustavo
+    #         ME_CONFIG_MONGODB_PORT: 27017
+    #         ME_CONFIG_MONGODB_ADMINUSERNAME: root
+    #         ME_CONFIG_MONGODB_ADMINPASSWORD: gustavo
+    #     links:
+    #         - mongo
+    #     networks:
+    #         gus-node-network:
+    #             ipv4_address: 12.0.0.11
     
     mongo:
         image: mongo

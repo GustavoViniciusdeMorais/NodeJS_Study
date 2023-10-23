@@ -36,6 +36,18 @@ app.use('/graphql', graphqlHTTP({
 app.listen(8080, () => console.log('Listen port 8080 for localhost/graphql'));
 ```
 
+### Query get product
+```js
+query {
+  getProduct(id: "") {
+    id,
+    name,
+    price,
+    descriptions
+  }
+}
+```
+
 ### Query Mutation Example
 The second json object tells which data of the created object will be returned.
 ```js

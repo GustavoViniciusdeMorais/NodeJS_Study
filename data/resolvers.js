@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
+import { Widgets } from './dbConnectors';
 
 class Product {
     constructor(id, {name, description, price, soldout, inventory, stores})
@@ -16,8 +17,13 @@ class Product {
 const productDB = {};
 
 const resolvers = {
-    getProducts: ({id}) => {
-        return new Product(id, productDB[id]);
+    getProduct: ({id}) => {
+        return new Promise((resolve) => {
+            Widgets.findById({_id: id}, (err, product) => {
+                if (err) reject (err)
+                else resolve(product)
+            })
+        });
     },
     createProduct: ({input}) => {
         let id = uuidv4();
