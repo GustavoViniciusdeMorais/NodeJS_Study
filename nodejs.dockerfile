@@ -1,5 +1,5 @@
 # FROM ubuntu:jammy
-FROM gustavovinicius/nodejs:latest
+FROM gustavovinicius/nodejs:mongodb
 
 RUN apt update
 

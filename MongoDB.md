@@ -1,3 +1,9 @@
+# MongoDB
+
+Created by Gustavo Morais
+
+### Install MongoDB and mongosh
+```sh
  #!/bin/bash
 apt-get update
 apt-get install gnupg curl
@@ -10,3 +16,12 @@ apt-get install -y mongodb-org
 systemctl start mongod
 systemctl status mongod
 curl -sLO https://downloads.mongodb.com/compass/mongodb-mongosh_2.0.2_amd64.deb && dpkg -i mongodb-mongosh_2.0.2_amd64.deb
+```
+
+### Use mongosh
+```sh
+mongosh
+use vikiport
+db.movies.insertOne({title: "Star Wars III", genres:["action", "SCI"], rutime: 180, year: 2006})
+db.movies.find()
+```
