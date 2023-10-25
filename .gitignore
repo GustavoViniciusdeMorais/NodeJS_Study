@@ -1,3 +1,4 @@
 node_modules
 .docker/dbdata
 *.deb
+node-v*
