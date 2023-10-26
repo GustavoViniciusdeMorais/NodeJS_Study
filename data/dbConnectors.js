@@ -38,4 +38,20 @@ const widgetSchema = new mongoose.Schema({
 
 const Widgets = mongoose.model('widgets', widgetSchema);
 
-export {Widgets};
+const sequelize = new Sequelize('sqlite::memory');
+
+const Categories = sequelize.define('categories', {
+    name: DataTypes.String,
+    description: DataTypes.String,
+});
+
+Categories.sync({force: true}).then(() => {
+    _.times(5, (i) => {
+        Categories.create({
+            name: casual.word,
+            description: casual.sentence
+        })
+    })
+});
+
+export {Widgets, Categories};
