@@ -24,4 +24,5 @@ mongosh
 use vikiport
 db.movies.insertOne({title: "Star Wars III", genres:["action", "SCI"], rutime: 180, year: 2006})
 db.movies.find()
+db.widgets.find()
 ```

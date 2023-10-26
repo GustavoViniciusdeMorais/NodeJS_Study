@@ -5,7 +5,7 @@ import casual from "casual";
 
 // Mongo connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://root:gustavo@mongo:27017/GustavoDB?authSource=admin', {
+mongoose.connect('mongodb://127.0.0.1:27017/widgets', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => {
@@ -41,8 +41,8 @@ const Widgets = mongoose.model('widgets', widgetSchema);
 const sequelize = new Sequelize('sqlite::memory');
 
 const Categories = sequelize.define('categories', {
-    name: DataTypes.String,
-    description: DataTypes.String,
+    name: DataTypes.STRING,
+    description: DataTypes.STRING,
 });
 
 Categories.sync({force: true}).then(() => {

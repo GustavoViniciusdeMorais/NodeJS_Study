@@ -43,7 +43,7 @@ query {
     id,
     name,
     price,
-    descriptions
+    description
   }
 }
 ```
@@ -56,7 +56,7 @@ mutation {
     name: "widget",
     description: "test",
     price: 1.3,
-    soldout: false,
+    soldout: SOLDOUT,
     stores: [
       {
         name:"asfasfdasdf"

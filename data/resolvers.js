@@ -18,17 +18,24 @@ const productDB = {};
 
 const resolvers = {
     getProduct: ({id}) => {
-        return new Promise((resolve) => {
-            Widgets.findById({_id: id}, (err, product) => {
-                if (err) reject (err)
-                else resolve(product)
-            })
-        });
+        return Widgets.find({}, 'name').exec()
     },
     createProduct: ({input}) => {
-        let id = uuidv4();
-        productDB[id] = input;
-        return new Product(id, input);
+        // let id = uuidv4();
+        // productDB[id] = input;
+        // return new Product(id, input);
+        const newWidget = new Widgets({
+            name: input.name,
+            description: input.description,
+            price: input.price,
+            soldout: input.soldout,
+            inventory: input.inventory,
+            stores: input.stores,
+        });
+
+        newWidget.id = newWidget._id;
+        
+        return newWidget.save()
     }
 };
 
