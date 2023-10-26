@@ -20,6 +20,9 @@ const resolvers = {
     getProduct: ({id}) => {
         return Widgets.find({}, 'name').exec()
     },
+    getAllProducts: () => {
+        return Widgets.find({})
+    },
     createProduct: ({input}) => {
         // let id = uuidv4();
         // productDB[id] = input;

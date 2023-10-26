@@ -48,6 +48,23 @@ query {
 }
 ```
 
+### Query get all products
+```js
+query {
+  getAllProducts {
+    id,
+    name,
+    description,
+    price,
+    inventory,
+    soldout,
+    stores {
+      name
+    }
+  }
+}
+```
+
 ### Query Mutation Example
 The second json object tells which data of the created object will be returned.
 ```js
