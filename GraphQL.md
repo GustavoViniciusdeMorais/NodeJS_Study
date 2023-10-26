@@ -13,6 +13,12 @@ npm i express express-graphql graphql nodemon
 npm i --save-dev @babel/cli @babel/core @babel/node @babel/preset-env
 ```
 
+### Start MongoDB service
+```sh
+systemctl start mongod
+systemctl status mongod
+```
+
 ### Basic index.js
 ```js
 import express from 'express'

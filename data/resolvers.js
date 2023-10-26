@@ -18,7 +18,7 @@ const productDB = {};
 
 const resolvers = {
     getProduct: ({id}) => {
-        return Widgets.find({}, 'name').exec()
+        return Widgets.findById({_id: id})
     },
     getAllProducts: () => {
         return Widgets.find({})
