@@ -96,4 +96,29 @@ mutation {
 }
 ```
 
+### Update example
+```js
+mutation {
+  updateProduct(input: {
+    id: "653ad53d4a0ada3db33069d1",
+    name: "asdfasdf",
+    description: "asdfasfasdf",
+    price: 13.3,
+    soldout: SOLDOUT,
+    stores: [
+      {
+        name:"asfasfdasdf"
+      }
+    ]
+  }),
+  {
+    id,
+    name,
+    description,
+    price,
+    soldout
+  }
+}
+```
+
 <img src="./public/imgs/graphiql.png" width="800" height="500">

@@ -39,6 +39,9 @@ const resolvers = {
         newWidget.id = newWidget._id;
         
         return newWidget.save()
+    },
+    updateProduct: ({input}) => {
+        return Widgets.findOneAndUpdate({_id: input.id}, input, {new: true})
     }
 };
 
