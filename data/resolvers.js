@@ -42,6 +42,10 @@ const resolvers = {
     },
     updateProduct: ({input}) => {
         return Widgets.findOneAndUpdate({_id: input.id}, input, {new: true})
+    },
+    deleteProduct: ({id}) => {
+        Widgets.findByIdAndDelete({_id: id})
+        return `Deleted entry of id ${id}`;
     }
 };
 
