@@ -41,3 +41,10 @@ See the mongo docker IP do configurate at mongoose connection
 ```
 sudo docker inspect [CONTAINER ID] | grep IP
 ```
+### Install node at linux alpine
+```sh
+apk add --update nodejs
+apk add --update npm
+npm install
+npm run build
+```
