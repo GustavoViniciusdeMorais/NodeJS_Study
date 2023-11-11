@@ -14,3 +14,7 @@ npx webpack --config webpack.config.js
 ```sh
 npm run build
 ```
+### Run webpack server
+```sh
+npx webpack serve
+```
