@@ -1,26 +1,20 @@
 {
-  "name": "app",
+  "name": "html",
   "version": "1.0.0",
-  "description": "first api",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./index.js --exec babel-node -e js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
-  "keywords": [
-    "gustavo"
-  ],
-  "author": "Gustavo Vinicius",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.20.0",
-    "express": "^4.17.3",
-    "mongodb": "^4.5.0",
-    "mongoose": "^6.2.10",
-    "nodemon": "^2.0.15"
-  },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-stage-0": "^6.24.1"
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
   }
 }
