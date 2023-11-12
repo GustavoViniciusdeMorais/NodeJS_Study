@@ -18,3 +18,5 @@ npm run build
 ```sh
 npx webpack serve
 ```
+### tfjs model qna answer
+![](./imgs/tfjsQnaModelAnswer.png)
