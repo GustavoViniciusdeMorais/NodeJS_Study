@@ -24,6 +24,11 @@ then
             docker-compose down
         fi
 
+        if [ $1 = "--stop-all" ]
+        then
+            docker container stop $(docker container ls -aq) && docker network prune -f
+        fi
+
         if [ -n "$2" ]
         then
             docker exec -it -u 0 $1 $2
