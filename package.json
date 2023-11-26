@@ -19,7 +19,7 @@
     "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
-    "@tensorflow/tfjs": "^4.13.0",
+    "@xenova/transformers": "^2.9.0",
     "lodash": "^4.17.21"
   }
 }
