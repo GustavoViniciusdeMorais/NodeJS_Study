@@ -20,12 +20,13 @@ const modelCall = async (input) => {
 
 generateButton.addEventListener('click', async () => {
   generateButton.setAttribute("disabled", true);
-
+  generateButton.textContent = 'Processing...'
   const input = longTextInput.value;
   if (typeof input === "string" && input.length > 0) {
     const result = await modelCall(input);
     output.innerHTML = result[0].summary_text;
   }
+  generateButton.textContent = 'Generate';
   generateButton.removeAttribute("disabled");
   output.style.display = 'block';
 });
